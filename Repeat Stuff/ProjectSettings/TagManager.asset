@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Obstacle
+  - Coin
+  - Immortality
+  - Magnet
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 177302361
+    locked: 0
+  - name: Obstacle
+    uniqueID: 3287694587
+    locked: 0
+  - name: Platform
+    uniqueID: 1012029719
+    locked: 0
+  - name: Coin
+    uniqueID: 1615442415
+    locked: 0
+  - name: Player
+    uniqueID: 2690029573
+    locked: 0
