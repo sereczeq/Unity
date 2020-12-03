@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 61
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffe70aba2e7074048aca5de573b64a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SimpleSelectedItems:
+    m_Keys:
+    - Assets/Portal.meta
+    - Assets/Portal/Portal.cs
+    - Assets/Portal/Portal.cs.meta
+    - Assets/Portal/PortalCamera.cs
+    - Assets/Portal/PortalCamera.cs.meta
+    - Assets/Portal/PortalTeleport.cs
+    - Assets/Portal/PortalTeleport.cs.meta
+    - Assets/PortalMaterial 1.mat
+    - Assets/PortalMaterial 1.mat.meta
+    - Assets/PortalMaterial.mat
+    - Assets/PortalMaterial.mat.meta
+    - Assets/PortalTexture 1.asset
+    - Assets/PortalTexture 1.asset.meta
+    - Assets/PortalTexture.asset
+    - Assets/PortalTexture.asset.meta
+    - Assets/Scenes/SampleScene.unity
+    - Assets/diament.fbx
+    - Assets/diament.fbx.meta
+    - Assets/klucz.blend
+    - Assets/klucz.blend.meta
+    - Assets/materials.meta
+    - Assets/materials/HighMaterial.mat
+    - Assets/materials/HighMaterial.mat.meta
+    - Assets/materials/LowMaterial.mat
+    - Assets/materials/LowMaterial.mat.meta
+    - Assets/materials/blue.mat
+    - Assets/materials/blue.mat.meta
+    - "Assets/pu\u0142apka.fbx"
+    - "Assets/pu\u0142apka.fbx.meta"
+    - Assets/scripts.meta
+    - Assets/scripts/CameraController.cs
+    - Assets/scripts/CameraController.cs.meta
+    - Assets/scripts/Diament.cs
+    - Assets/scripts/Diament.cs.meta
+    - Assets/scripts/GameManager.cs
+    - Assets/scripts/GameManager.cs.meta
+    - Assets/scripts/Key.cs
+    - Assets/scripts/Key.cs.meta
+    - Assets/scripts/Pickup.cs
+    - Assets/scripts/Pickup.cs.meta
+    - Assets/scripts/PlayerController.cs
+    - Assets/scripts/PlayerController.cs.meta
+    - Assets/zegarMinus.fbx
+    - Assets/zegarMinus.fbx.meta
+    - Assets/zegarPlus.fbx
+    - Assets/zegarPlus.fbx.meta
+    - 
+    m_Values: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  RevisionSummary: 
+  ChangesSearchValue: 
+  SelectedHistoryRevision: 
+  HistoryPageNumber: 0
+  TabIndex: 0
