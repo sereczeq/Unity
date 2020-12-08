@@ -8,6 +8,7 @@ public class PlayerContoller : MonoBehaviour
     public float movementSpeed = 5f;
     public float rotateSpeed = 5f;
     private Animator anim;
+    public float rotationOffset = 55f;
 
     private void Start()
     {
@@ -23,7 +24,7 @@ public class PlayerContoller : MonoBehaviour
         Movement();
         
     }
-
+    
     private void LookAtMouse()
     {
         Plane playerPlane = new Plane(Vector3.up, transform.position);
@@ -33,7 +34,7 @@ public class PlayerContoller : MonoBehaviour
         if (playerPlane.Raycast(ray, out hitdist))
         {
             Vector3 targetPoint = ray.GetPoint(hitdist);
-            Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position);
+            Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position) * Quaternion.AngleAxis(rotationOffset, Vector3.up);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);
         }
     }

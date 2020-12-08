@@ -12,7 +12,7 @@ public class Pickup : MonoBehaviour
     
     private void Start()
     {
-        gameObject.tag = "PickUp";
+        gameObject.tag = "Pickup";
     }
 
     public virtual void Picked()

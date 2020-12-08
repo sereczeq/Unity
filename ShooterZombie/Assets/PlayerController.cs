@@ -7,10 +7,12 @@ public class PlayerController : MonoBehaviour
     public float movementSpeed = 1f;
     public float rotateSpeed = 1f;
 
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -18,8 +20,20 @@ public class PlayerController : MonoBehaviour
     {
         Movement();
         Rotate();
+        Animate();
     }
 
+    void Animate()
+    {
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        {
+            animator.SetBool("Run", true);
+        }
+        else
+        {
+            animator.SetBool("Run", false);
+        }
+    }
     void Movement()
     {
         if (Input.GetKey(KeyCode.W))
@@ -70,4 +84,5 @@ public class PlayerController : MonoBehaviour
                                                                     rotateSpeed * Time.deltaTime);
         }
     }
+
 }

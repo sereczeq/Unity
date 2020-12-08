@@ -21,7 +21,10 @@ public class Lock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.E) && iCanOpen && !locked)
+        {
+            animator.SetBool("Open", CheckTheKey());
+        }
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -41,4 +44,38 @@ public class Lock : MonoBehaviour
             Debug.Log("You are no longer in keys distance");
         }
     }
+
+    public void UseKey()
+    {
+        foreach (Door door in doors)
+        {
+            door.OpenClose();
+        }
+    }
+
+    public bool CheckTheKey()
+    {
+        if (GameManager.gameManager.redKeys > 0 && color == KeyColor.Red)
+        {
+            GameManager.gameManager.redKeys--;
+        }
+        else if (GameManager.gameManager.greenKeys > 0 && color == KeyColor.Green)
+        {
+            GameManager.gameManager.greenKeys--;
+        }
+        else if (GameManager.gameManager.goldKeys > 0 && color == KeyColor.Gold)
+        {
+            GameManager.gameManager.goldKeys--;
+        }
+        else
+        {
+            Debug.Log("Nie masz klucza!");
+            return false;
+        }
+
+        locked = true;
+        return true;
+    }
+
+
 }
