@@ -30,13 +30,6 @@ MonoBehaviour:
     - Assets/PortalTexture.asset
     - Assets/PortalTexture.asset.meta
     - Assets/Scenes/SampleScene.unity
-    - Assets/animations.meta
-    - Assets/animations/keyAnim.anim
-    - Assets/animations/keyAnim.anim.meta
-    - Assets/animations/keyDissapear.anim
-    - Assets/animations/keyDissapear.anim.meta
-    - Assets/animations/klucz.controller
-    - Assets/animations/klucz.controller.meta
     - Assets/diament.fbx
     - Assets/diament.fbx.meta
     - Assets/klucz.blend
@@ -55,29 +48,20 @@ MonoBehaviour:
     - Assets/scripts/CameraController.cs.meta
     - Assets/scripts/Diament.cs
     - Assets/scripts/Diament.cs.meta
-    - Assets/scripts/Door.cs
-    - Assets/scripts/Door.cs.meta
     - Assets/scripts/GameManager.cs
     - Assets/scripts/GameManager.cs.meta
     - Assets/scripts/Key.cs
     - Assets/scripts/Key.cs.meta
-    - Assets/scripts/Lock.cs
-    - Assets/scripts/Lock.cs.meta
     - Assets/scripts/Pickup.cs
     - Assets/scripts/Pickup.cs.meta
     - Assets/scripts/PlayerController.cs
     - Assets/scripts/PlayerController.cs.meta
-    - Assets/scripts/Spikes.cs
-    - Assets/scripts/Spikes.cs.meta
     - Assets/zegarMinus.fbx
     - Assets/zegarMinus.fbx.meta
     - Assets/zegarPlus.fbx
     - Assets/zegarPlus.fbx.meta
-    - Packages/manifest.json
-    - Packages/packages-lock.json
-    - ProjectSettings/TagManager.asset
     - 
-    m_Values: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    m_Values: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 

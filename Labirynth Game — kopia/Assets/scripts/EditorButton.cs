@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEditor;
 
 [CustomEditor(typeof(LevelGenerator))]
@@ -11,9 +10,11 @@ public class EditorButton : Editor
 
         LevelGenerator generator = (LevelGenerator)target;
 
-        if(GUILayout.Button("Create Labirynth"))
+        if (GUILayout.Button("Create Labirynth"))
         {
             generator.GenerateLabirynth();
         }
+
     }
+
 }

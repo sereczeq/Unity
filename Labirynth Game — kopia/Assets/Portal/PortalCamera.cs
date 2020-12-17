@@ -34,7 +34,7 @@ public class PortalCamera : MonoBehaviour
 
         if (myAngle == 90 || myAngle == 270)
         {
-            newCameraDirection = new Vector3(newCameraDirection.z * -1, newCameraDirection.y, newCameraDirection.x);
+            newCameraDirection = new Vector3(newCameraDirection.z * -1, newCameraDirection.y * 1, newCameraDirection.x * 1);
 
             transform.rotation = Quaternion.LookRotation(newCameraDirection, Vector3.up);
         }
@@ -42,7 +42,7 @@ public class PortalCamera : MonoBehaviour
         else
 
         {
-            newCameraDirection = new Vector3(newCameraDirection.x * -1, newCameraDirection.y, newCameraDirection.z * -1);
+            newCameraDirection = new Vector3(newCameraDirection.x * -1, newCameraDirection.y * 1, newCameraDirection.z * -1);
 
             transform.rotation = Quaternion.LookRotation(newCameraDirection, Vector3.up);
 

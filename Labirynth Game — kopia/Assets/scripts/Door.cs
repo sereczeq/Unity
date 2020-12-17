@@ -9,25 +9,26 @@ public class Door : MonoBehaviour
     public Transform door;
 
     public bool open = false;
-    public float speed = 5f;
+
+    public float speed = 1f;
 
 
+    // Start is called before the first frame update
     void Start()
     {
         door.position = closePosition.position;
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
         if(open && Vector3.Distance(door.position, openPosition.position) > 0.001f)
         {
-            door.position = Vector3.MoveTowards(door.position, openPosition.position,
-            Time.deltaTime * speed);
+            door.position = Vector3.MoveTowards(door.position, openPosition.position, speed * Time.deltaTime);
         }
-        if(!open && Vector3.Distance(door.position, closePosition.position) > 0.001f)
+        else if(!open && Vector3.Distance(door.position, closePosition.position) > 0.001f)
         {
-            door.position = Vector3.MoveTowards(door.position, closePosition.position,
-            Time.deltaTime * speed);
+            door.position = Vector3.MoveTowards(door.position, closePosition.position, speed * Time.deltaTime);
         }
     }
 

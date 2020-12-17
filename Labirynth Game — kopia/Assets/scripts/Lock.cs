@@ -5,71 +5,76 @@ using UnityEngine;
 public class Lock : MonoBehaviour
 {
 
+    public bool iCanOpen = false;
+
     public Door[] doors;
-    public KeyColor myColor;
+    public KeyColor color;
     bool locked = false;
-    Animator key;
-    bool iCanOpen = false;
+    Animator animator;
 
-
+    // Start is called before the first frame update
     void Start()
     {
-        key = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
+    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && iCanOpen && !locked)
         {
-            key.SetBool("useKey", CheckTheKey());
+            animator.SetBool("Open", CheckTheKey());
+        }
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if(collision.CompareTag("Player"))
+        {
+            iCanOpen = true;
+            Debug.Log("You are in keys distance");
+        }
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            iCanOpen = false;
+            Debug.Log("You are no longer in keys distance");
         }
     }
 
     public void UseKey()
     {
-        foreach(Door door in doors)
+        foreach (Door door in doors)
         {
             door.OpenClose();
-        }   
+        }
     }
 
     public bool CheckTheKey()
     {
-        if(GameManager.gameManager.redKeys > 0 && myColor == KeyColor.Red)
+        if (GameManager.gameManager.redKeys > 0 && color == KeyColor.Red)
         {
             GameManager.gameManager.redKeys--;
         }
-        else if (GameManager.gameManager.greenKeys > 0 && myColor == KeyColor.Green)
+        else if (GameManager.gameManager.greenKeys > 0 && color == KeyColor.Green)
         {
             GameManager.gameManager.greenKeys--;
         }
-        else if (GameManager.gameManager.goldKeys > 0 && myColor == KeyColor.Gold)
+        else if (GameManager.gameManager.goldKeys > 0 && color == KeyColor.Gold)
         {
             GameManager.gameManager.goldKeys--;
-        } else
+        }
+        else
         {
-            Debug.Log("You don't have the right key!");
+            Debug.Log("Nie masz klucza!");
             return false;
         }
-            return locked = true;
-    }
 
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "Player")
-        {
-            iCanOpen = true;
-            Debug.Log("You Can Use Lock");
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            iCanOpen = false;
-            Debug.Log("You Can not Use Lock");
-        }
+        locked = true;
+        return true;
     }
 
 

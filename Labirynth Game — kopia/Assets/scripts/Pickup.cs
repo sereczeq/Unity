@@ -17,6 +17,7 @@ public class Pickup : MonoBehaviour
 
     public virtual void Picked()
     {
+        GameManager.gameManager.PlayClip(GameManager.gameManager.pickedClip);
         Destroy(this.gameObject);
     }
 

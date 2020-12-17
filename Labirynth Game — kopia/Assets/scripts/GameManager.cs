@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
 
+    public MusicScript musicScript;
     public int timeToEnd = 100;
     private KeyCode pauseButton = KeyCode.P;
     bool gamePaused = false;
@@ -17,6 +18,15 @@ public class GameManager : MonoBehaviour
     public int goldKeys = 0;
     public int greenKeys = 0;
 
+    //Audio
+    public AudioSource audioSource;
+    public AudioClip resumeClip;
+    public AudioClip pauseClip;
+    public AudioClip winClip;
+    public AudioClip loseClip;
+    public AudioClip pickedClip;
+
+    bool timeRunningOut = false;
     private void Start()
     {
         if(gameManager == null)
@@ -24,6 +34,9 @@ public class GameManager : MonoBehaviour
             gameManager = this;
         }
         InvokeRepeating("stopper", 0, 1);
+
+        audioSource = GetComponent<AudioSource>();
+        musicScript = GetComponentInChildren<MusicScript>();
     }
 
     void Update()
@@ -49,6 +62,7 @@ public class GameManager : MonoBehaviour
 
     private void pauseGame()
     {
+        PlayClip(pauseClip);
         Debug.Log("Game paused!");
         Time.timeScale = 0f;
         gamePaused = true;
@@ -61,6 +75,16 @@ public class GameManager : MonoBehaviour
         {
             endGame();
             return;
+        }
+
+        if (timeToEnd < 20 && !timeRunningOut)
+        {
+            LessTimeOn();
+            timeRunningOut = true;
+        } else if (timeToEnd > 20 && timeRunningOut)
+        {
+            LessTimeOff();
+            timeRunningOut = false;
         }
 
         timeToEnd--;
@@ -90,6 +114,21 @@ public class GameManager : MonoBehaviour
         if(color == KeyColor.Red)           redKeys++; 
         else if (color == KeyColor.Gold)    goldKeys++;
         else if (color == KeyColor.Green)   greenKeys++;
+    }
+
+    public void PlayClip(AudioClip playClip)
+    {
+        audioSource.clip = playClip;
+        audioSource.Play();
+    }
+
+    public void LessTimeOn()
+    {
+        musicScript.PitchThis(1.58f);
+    }
+    public void LessTimeOff()
+    {
+        musicScript.PitchThis(1f);
     }
 
 }
