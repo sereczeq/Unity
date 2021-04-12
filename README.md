@@ -1,5 +1,5 @@
 # Unity-Projects
-Unity Games I'm making whenever I have time
+Unity Games I'm making for my teaching job
 
 1. Labirynth Game - Game with Portal mechanics. The player has to find his way out of the Labirynt in set time. In his way he meets obstacles such as portals, doors for which he has to find keys and more.
 
